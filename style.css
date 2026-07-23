@@ -127,10 +127,12 @@ body {
     z-index: 10;
 }
 
-.celular-mockup iframe {
+.celular-mockup iframe,
+.celular-mockup video {
     width: 100%;
     height: 100%;
     border: none;
+    object-fit: cover;
 }
 
 .info-proyecto h3 {
