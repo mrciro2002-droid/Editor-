@@ -1,2 +1,6 @@
 videos/*_src.mp4
 videos/test5s*.mp4
+# Videos crudos sin comprimir (usa las versiones proyectoN.mp4 ya optimizadas)
+videos/Frutas de Chile def.mp4
+videos/definitiuvo cae prof.mp4
+videos/secreto bancario.mp4
