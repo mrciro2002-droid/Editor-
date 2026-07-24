@@ -206,7 +206,8 @@ textarea:focus-visible {
 }
 
 .celular-mockup iframe,
-.celular-mockup video {
+.celular-mockup video,
+.celular-mockup img {
     width: 100%;
     height: 100%;
     border: none;
@@ -255,6 +256,102 @@ textarea:focus-visible {
 
 .enlace:hover {
     text-decoration: underline;
+}
+
+/* ==================== SOBRE MÍ ==================== */
+.seccion-sobre-mi {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 60px 0;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeInUp 0.6s ease both;
+}
+
+.foto-perfil {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 3px solid var(--borde);
+}
+
+.sobre-mi-texto {
+    text-align: left;
+}
+
+.sobre-mi-texto .titulo-seccion {
+    text-align: left;
+    margin-bottom: 16px;
+    font-size: 1.6rem;
+}
+
+.sobre-mi-texto p {
+    color: var(--texto-secundario);
+}
+
+@media (max-width: 600px) {
+    .seccion-sobre-mi {
+        flex-direction: column;
+        text-align: center;
+    }
+    .sobre-mi-texto {
+        text-align: center;
+    }
+    .sobre-mi-texto .titulo-seccion {
+        text-align: center;
+    }
+}
+
+/* ==================== PROCESO DE TRABAJO ==================== */
+.seccion-proceso {
+    padding: 20px 0 60px;
+}
+
+.pasos-proceso {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.paso {
+    background-color: var(--fondo-tarjeta);
+    border: 1px solid var(--borde);
+    border-radius: 20px;
+    padding: 28px 24px;
+    text-align: center;
+    animation: fadeInUp 0.6s ease both;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.paso:hover {
+    transform: translateY(-4px);
+    border-color: var(--acento);
+}
+
+.paso-numero {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--acento);
+    color: white;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.paso h3 {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.paso p {
+    color: var(--texto-secundario);
+    font-size: 0.9rem;
 }
 
 /* ==================== FORMULARIO DE CONTACTO ==================== */

@@ -40,6 +40,25 @@
 
     <!-- Aquí conectamos el diseño (CSS) con la estructura (HTML) -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- ==================== DATOS ESTRUCTURADOS (SEO) ==================== -->
+    <!-- Ayuda a Google a entender que este sitio es de un profesional que ofrece servicios de edición -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Edición de Reels y TikToks",
+      "description": "Editor audiovisual freelance especializado en Reels y TikToks para marcas y negocios locales.",
+      "url": "https://tu-dominio.com/",
+      "image": "https://tu-dominio.com/assets/og-image.png",
+      "email": "mailto:amaro3004@gmail.com",
+      "areaServed": "CL",
+      "sameAs": [
+        "https://instagram.com/amaroantoine",
+        "https://tiktok.com/@amaro_ls"
+      ]
+    }
+    </script>
 </head>
 <body>
 
@@ -52,7 +71,7 @@
             <span class="etiqueta">Editor Audiovisual Freelance</span>
             <h1 class="titulo-principal">Edición de Reels y TikToks</h1>
             <p class="subtitulo">Ayudo a marcas y negocios locales a impulsar sus redes sociales.</p>
-            <a href="https://wa.me/56984640412" target="_blank" rel="noopener noreferrer" class="boton-primario">Cotizar mi proyecto</a>
+            <a href="https://wa.me/56984640412?text=Hola%2C%20vi%20tu%20portafolio%20y%20quiero%20cotizar%20un%20video" target="_blank" rel="noopener noreferrer" class="boton-primario">Cotizar mi proyecto</a>
         </div>
     </header>
 
@@ -68,7 +87,7 @@
                     <div class="celular-mockup">
                         <div class="notch"></div>
                         <!-- Reemplaza el src con el nombre de tu archivo de video -->
-                        <video src="videos/proyecto1.mp4" controls muted loop playsinline poster="videos/proyecto1.jpg" aria-label="Video de ejemplo: contenido comercial editado"></video>
+                        <video src="videos/proyecto1.mp4" controls muted loop playsinline preload="none" poster="videos/proyecto1.jpg" aria-label="Video de ejemplo: contenido comercial editado"></video>
                     </div>
                     <div class="info-proyecto">
                         <h3>Contenido Comercial</h3>
@@ -80,7 +99,7 @@
                 <article class="tarjeta-proyecto">
                     <div class="celular-mockup">
                         <div class="notch"></div>
-                        <video src="videos/proyecto2.mp4" controls muted loop playsinline poster="videos/proyecto2.jpg" aria-label="Video de ejemplo: edición en tendencia"></video>
+                        <video src="videos/proyecto2.mp4" controls muted loop playsinline preload="none" poster="videos/proyecto2.jpg" aria-label="Video de ejemplo: edición en tendencia"></video>
                     </div>
                     <div class="info-proyecto">
                         <h3>Edición en Tendencia</h3>
@@ -89,10 +108,11 @@
                 </article>
 
                 <!-- PROYECTO 3 -->
+                <!-- Cuando tengas el video, reemplaza este <img> por el <video> como en los proyectos 1 y 2 -->
                 <article class="tarjeta-proyecto">
                     <div class="celular-mockup">
                         <div class="notch"></div>
-                        <video src="videos/proyecto3.mp4" controls muted loop playsinline poster="videos/proyecto3.jpg" aria-label="Video de ejemplo: story o vlog"></video>
+                        <img src="videos/proyecto3.jpg" alt="Proyecto próximamente disponible" loading="lazy">
                     </div>
                     <div class="info-proyecto">
                         <h3>Story/ Vlog</h3>
@@ -100,6 +120,38 @@
                     </div>
                 </article>
 
+            </div>
+        </section>
+
+        <!-- ==================== SOBRE MÍ ==================== -->
+        <!-- Reemplaza el nombre, la bio y assets/avatar-placeholder.png por tu foto real -->
+        <section class="seccion-sobre-mi">
+            <img src="assets/avatar-placeholder.png" alt="Foto de perfil" class="foto-perfil">
+            <div class="sobre-mi-texto">
+                <h2 class="titulo-seccion">Sobre mí</h2>
+                <p>Soy editor audiovisual freelance, especializado en contenido vertical para Instagram y TikTok. Trabajo con marcas y negocios locales que quieren destacar en redes sociales con videos dinámicos, bien ritmados y pensados para retener a la audiencia.</p>
+            </div>
+        </section>
+
+        <!-- ==================== PROCESO DE TRABAJO ==================== -->
+        <section class="seccion-proceso">
+            <h2 class="titulo-seccion">¿Cómo trabajamos?</h2>
+            <div class="pasos-proceso">
+                <div class="paso">
+                    <span class="paso-numero">1</span>
+                    <h3>Me cuentas tu idea</h3>
+                    <p>Me compartes tu material y el objetivo del video (venta, marca personal, tendencia, etc.).</p>
+                </div>
+                <div class="paso">
+                    <span class="paso-numero">2</span>
+                    <h3>Edito</h3>
+                    <p>Ritmo, música, subtítulos y efectos pensados para que la gente no haga scroll.</p>
+                </div>
+                <div class="paso">
+                    <span class="paso-numero">3</span>
+                    <h3>Te lo entrego</h3>
+                    <p>Revisas, pedimos ajustes si hace falta, y listo para publicar.</p>
+                </div>
             </div>
         </section>
 
@@ -147,7 +199,7 @@
     </footer>
 
     <!-- ==================== BOTÓN FLOTANTE WHATSAPP ==================== -->
-    <a href="https://wa.me/56984640412" target="_blank" rel="noopener noreferrer" class="whatsapp-flotante" aria-label="Escribir por WhatsApp">
+    <a href="https://wa.me/56984640412?text=Hola%2C%20vi%20tu%20portafolio%20y%20quiero%20cotizar%20un%20video" target="_blank" rel="noopener noreferrer" class="whatsapp-flotante" aria-label="Escribir por WhatsApp">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true">
             <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.48 1.32 5L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.93 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0 0 12.04 2m0 1.67a8.2 8.2 0 0 1 5.83 2.42 8.18 8.18 0 0 1 2.41 5.82c0 4.55-3.7 8.26-8.25 8.26a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.18 8.18 0 0 1-1.26-4.37c0-4.55 3.71-8.27 8.25-8.27M8.53 7.33c-.16 0-.43.06-.66.31s-.87.86-.87 2.07c0 1.22.89 2.4 1.01 2.56s1.76 2.83 4.38 3.85c2.17.85 2.61.68 3.08.64.47-.05 1.51-.62 1.72-1.21.21-.6.21-1.11.15-1.22-.07-.1-.23-.16-.48-.28s-1.51-.75-1.75-.83c-.23-.09-.4-.13-.58.13-.17.26-.66.83-.81 1-.15.16-.3.19-.56.06-.26-.13-1.09-.4-2.07-1.28-.77-.68-1.28-1.53-1.44-1.79-.15-.26-.02-.4.11-.53.12-.12.26-.3.4-.46.13-.15.17-.26.26-.43.09-.17.04-.33-.02-.46-.06-.13-.58-1.44-.81-1.96-.21-.51-.42-.44-.58-.45z"/>
         </svg>
