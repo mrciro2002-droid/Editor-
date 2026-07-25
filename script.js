@@ -1,56 +1,79 @@
 /* ====================================================================
-   Control de reproducción de la galería
-   - Pausa (y reinicia) cualquier video que no sea el que está abierto,
-     para que no siga sonando al cambiar de proyecto.
-   - Permite cerrar la galería con la tecla Escape.
+   Reproductor de proyectos del portafolio
+   - Muestra un proyecto a la vez; la tira de miniaturas cambia de proyecto.
+   - Pausa (y reinicia) el video anterior para que no siga sonando.
    ==================================================================== */
 (function () {
     'use strict';
 
-    var videos = document.querySelectorAll('.galeria video');
-    if (!videos.length) {
+    var seccion = document.querySelector('.seccion-portafolio');
+    if (!seccion) {
         return;
     }
 
-    function idActivo() {
+    var proyectos = seccion.querySelectorAll('.galeria');
+    if (!proyectos.length) {
+        return;
+    }
+
+    function idDesdeHash() {
         return (window.location.hash || '').replace('#', '');
     }
 
-    function pausarLosDemas() {
-        var activo = idActivo();
+    function mostrarProyecto(id) {
+        var encontrado = false;
 
-        Array.prototype.forEach.call(videos, function (video) {
-            var galeria = video.parentNode;
-            while (galeria && !(galeria.classList && galeria.classList.contains('galeria'))) {
-                galeria = galeria.parentNode;
-            }
-            if (!galeria) {
-                return;
+        Array.prototype.forEach.call(proyectos, function (proyecto) {
+            var activo = proyecto.id === id;
+            if (activo) {
+                encontrado = true;
             }
 
-            // Si esta galería no es la que está abierta, detener su video
-            if (galeria.id !== activo) {
-                if (!video.paused) {
-                    video.pause();
-                }
-                if (video.currentTime !== 0) {
-                    video.currentTime = 0;
+            proyecto.classList.toggle('galeria--activa', activo);
+
+            // Detener el video de los proyectos que no están visibles
+            if (!activo) {
+                var video = proyecto.querySelector('video');
+                if (video) {
+                    if (!video.paused) {
+                        video.pause();
+                    }
+                    if (video.currentTime !== 0) {
+                        video.currentTime = 0;
+                    }
                 }
             }
         });
+
+        // Si el hash no corresponde a ningún proyecto, dejar visible el primero
+        if (!encontrado) {
+            proyectos[0].classList.add('galeria--activa');
+        }
     }
 
-    window.addEventListener('hashchange', pausarLosDemas);
-    pausarLosDemas();
+    function sincronizar() {
+        var id = idDesdeHash();
+        mostrarProyecto(id || proyectos[0].id);
+    }
 
-    // Cerrar la galería abierta con Escape
-    document.addEventListener('keydown', function (evento) {
-        if (evento.key !== 'Escape') {
-            return;
-        }
-        var abierta = document.querySelector('.galeria:target');
-        if (abierta) {
-            window.location.hash = 'portafolio';
-        }
+    // Cambiar de proyecto sin saltar el scroll ni ensuciar el historial
+    Array.prototype.forEach.call(seccion.querySelectorAll('.filmstrip-item'), function (enlace) {
+        enlace.addEventListener('click', function (evento) {
+            var destino = (enlace.getAttribute('href') || '').replace('#', '');
+            if (!destino || !document.getElementById(destino)) {
+                return;
+            }
+            evento.preventDefault();
+
+            if (window.history && window.history.replaceState) {
+                window.history.replaceState(null, '', '#' + destino);
+            } else {
+                window.location.hash = destino;
+            }
+            mostrarProyecto(destino);
+        });
     });
+
+    window.addEventListener('hashchange', sincronizar);
+    sincronizar();
 })();

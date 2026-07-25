@@ -80,43 +80,13 @@
         <section class="seccion-portafolio" id="portafolio">
             <div class="portafolio-encabezado">
                 <span class="portafolio-indice">(05)</span>
-                <h2 class="titulo-editorial">Trabajos<br>seleccionados</h2>
+                <span class="portafolio-etiqueta">Trabajos seleccionados</span>
             </div>
 
-            <!-- Miniaturas: al hacer clic se abre la vista grande (galería) de ese proyecto -->
-            <div class="cuadricula-videos">
-                <a href="#proyecto1" class="miniatura-proyecto">
-                    <span class="miniatura-numero">01</span>
-                    <img src="videos/proyecto1.jpg" alt="Contenido Comercial" loading="lazy">
-                    <span class="miniatura-titulo">Contenido Comercial</span>
-                </a>
-                <a href="#proyecto2" class="miniatura-proyecto">
-                    <span class="miniatura-numero">02</span>
-                    <img src="videos/proyecto2.jpg" alt="Edición en Tendencia" loading="lazy">
-                    <span class="miniatura-titulo">Edición en Tendencia</span>
-                </a>
-                <a href="#proyecto3" class="miniatura-proyecto">
-                    <span class="miniatura-numero">03</span>
-                    <img src="videos/proyecto3.jpg" alt="Contenido Educativo" loading="lazy">
-                    <span class="miniatura-titulo">Contenido Educativo</span>
-                </a>
-                <a href="#proyecto4" class="miniatura-proyecto">
-                    <span class="miniatura-numero">04</span>
-                    <img src="videos/proyecto4.jpg" alt="Video Explicativo" loading="lazy">
-                    <span class="miniatura-titulo">Video Explicativo</span>
-                </a>
-                <a href="#proyecto5" class="miniatura-proyecto">
-                    <span class="miniatura-numero">05</span>
-                    <img src="videos/proyecto5.jpg" alt="Reel Informativo" loading="lazy">
-                    <span class="miniatura-titulo">Reel Informativo</span>
-                </a>
-            </div>
+            <!-- Cada proyecto se muestra en el reproductor principal.
+                 La tira de miniaturas de abajo cambia de proyecto (ver script.js). -->
 
-            <!-- ==================== GALERÍAS (vista grande, estilo editorial) ==================== -->
-            <!-- Funcionan sin JavaScript, usando anclas (#) y :target en el CSS -->
-
-            <div class="galeria" id="proyecto1">
-                <a href="#portafolio" class="galeria-cerrar">Cerrar galería</a>
+            <article class="galeria galeria--activa" id="proyecto1">
                 <div class="galeria-contenido">
                     <div class="galeria-info">
                         <span class="galeria-contador">01 / 05</span>
@@ -129,16 +99,15 @@
                     </div>
                 </div>
                 <div class="galeria-filmstrip">
-                    <a href="#proyecto1" class="filmstrip-item filmstrip-activo"><img src="videos/proyecto1.jpg" alt="Contenido Comercial"></a>
-                    <a href="#proyecto2" class="filmstrip-item"><img src="videos/proyecto2.jpg" alt="Edición en Tendencia"></a>
-                    <a href="#proyecto3" class="filmstrip-item"><img src="videos/proyecto3.jpg" alt="Contenido Educativo"></a>
-                    <a href="#proyecto4" class="filmstrip-item"><img src="videos/proyecto4.jpg" alt="Video Explicativo"></a>
-                    <a href="#proyecto5" class="filmstrip-item"><img src="videos/proyecto5.jpg" alt="Reel Informativo"></a>
+                    <a href="#proyecto1" class="filmstrip-item filmstrip-activo" aria-current="true"><span class="filmstrip-numero">01</span><img src="videos/proyecto1.jpg" alt="Contenido Comercial" loading="lazy"></a>
+                    <a href="#proyecto2" class="filmstrip-item"><span class="filmstrip-numero">02</span><img src="videos/proyecto2.jpg" alt="Edición en Tendencia" loading="lazy"></a>
+                    <a href="#proyecto3" class="filmstrip-item"><span class="filmstrip-numero">03</span><img src="videos/proyecto3.jpg" alt="Contenido Educativo" loading="lazy"></a>
+                    <a href="#proyecto4" class="filmstrip-item"><span class="filmstrip-numero">04</span><img src="videos/proyecto4.jpg" alt="Video Explicativo" loading="lazy"></a>
+                    <a href="#proyecto5" class="filmstrip-item"><span class="filmstrip-numero">05</span><img src="videos/proyecto5.jpg" alt="Reel Informativo" loading="lazy"></a>
                 </div>
-            </div>
+            </article>
 
-            <div class="galeria" id="proyecto2">
-                <a href="#portafolio" class="galeria-cerrar">Cerrar galería</a>
+            <article class="galeria" id="proyecto2">
                 <div class="galeria-contenido">
                     <div class="galeria-info">
                         <span class="galeria-contador">02 / 05</span>
@@ -151,16 +120,15 @@
                     </div>
                 </div>
                 <div class="galeria-filmstrip">
-                    <a href="#proyecto1" class="filmstrip-item"><img src="videos/proyecto1.jpg" alt="Contenido Comercial"></a>
-                    <a href="#proyecto2" class="filmstrip-item filmstrip-activo"><img src="videos/proyecto2.jpg" alt="Edición en Tendencia"></a>
-                    <a href="#proyecto3" class="filmstrip-item"><img src="videos/proyecto3.jpg" alt="Contenido Educativo"></a>
-                    <a href="#proyecto4" class="filmstrip-item"><img src="videos/proyecto4.jpg" alt="Video Explicativo"></a>
-                    <a href="#proyecto5" class="filmstrip-item"><img src="videos/proyecto5.jpg" alt="Reel Informativo"></a>
+                    <a href="#proyecto1" class="filmstrip-item"><span class="filmstrip-numero">01</span><img src="videos/proyecto1.jpg" alt="Contenido Comercial" loading="lazy"></a>
+                    <a href="#proyecto2" class="filmstrip-item filmstrip-activo" aria-current="true"><span class="filmstrip-numero">02</span><img src="videos/proyecto2.jpg" alt="Edición en Tendencia" loading="lazy"></a>
+                    <a href="#proyecto3" class="filmstrip-item"><span class="filmstrip-numero">03</span><img src="videos/proyecto3.jpg" alt="Contenido Educativo" loading="lazy"></a>
+                    <a href="#proyecto4" class="filmstrip-item"><span class="filmstrip-numero">04</span><img src="videos/proyecto4.jpg" alt="Video Explicativo" loading="lazy"></a>
+                    <a href="#proyecto5" class="filmstrip-item"><span class="filmstrip-numero">05</span><img src="videos/proyecto5.jpg" alt="Reel Informativo" loading="lazy"></a>
                 </div>
-            </div>
+            </article>
 
-            <div class="galeria" id="proyecto3">
-                <a href="#portafolio" class="galeria-cerrar">Cerrar galería</a>
+            <article class="galeria" id="proyecto3">
                 <div class="galeria-contenido">
                     <div class="galeria-info">
                         <span class="galeria-contador">03 / 05</span>
@@ -173,16 +141,15 @@
                     </div>
                 </div>
                 <div class="galeria-filmstrip">
-                    <a href="#proyecto1" class="filmstrip-item"><img src="videos/proyecto1.jpg" alt="Contenido Comercial"></a>
-                    <a href="#proyecto2" class="filmstrip-item"><img src="videos/proyecto2.jpg" alt="Edición en Tendencia"></a>
-                    <a href="#proyecto3" class="filmstrip-item filmstrip-activo"><img src="videos/proyecto3.jpg" alt="Contenido Educativo"></a>
-                    <a href="#proyecto4" class="filmstrip-item"><img src="videos/proyecto4.jpg" alt="Video Explicativo"></a>
-                    <a href="#proyecto5" class="filmstrip-item"><img src="videos/proyecto5.jpg" alt="Reel Informativo"></a>
+                    <a href="#proyecto1" class="filmstrip-item"><span class="filmstrip-numero">01</span><img src="videos/proyecto1.jpg" alt="Contenido Comercial" loading="lazy"></a>
+                    <a href="#proyecto2" class="filmstrip-item"><span class="filmstrip-numero">02</span><img src="videos/proyecto2.jpg" alt="Edición en Tendencia" loading="lazy"></a>
+                    <a href="#proyecto3" class="filmstrip-item filmstrip-activo" aria-current="true"><span class="filmstrip-numero">03</span><img src="videos/proyecto3.jpg" alt="Contenido Educativo" loading="lazy"></a>
+                    <a href="#proyecto4" class="filmstrip-item"><span class="filmstrip-numero">04</span><img src="videos/proyecto4.jpg" alt="Video Explicativo" loading="lazy"></a>
+                    <a href="#proyecto5" class="filmstrip-item"><span class="filmstrip-numero">05</span><img src="videos/proyecto5.jpg" alt="Reel Informativo" loading="lazy"></a>
                 </div>
-            </div>
+            </article>
 
-            <div class="galeria" id="proyecto4">
-                <a href="#portafolio" class="galeria-cerrar">Cerrar galería</a>
+            <article class="galeria" id="proyecto4">
                 <div class="galeria-contenido">
                     <div class="galeria-info">
                         <span class="galeria-contador">04 / 05</span>
@@ -195,16 +162,15 @@
                     </div>
                 </div>
                 <div class="galeria-filmstrip">
-                    <a href="#proyecto1" class="filmstrip-item"><img src="videos/proyecto1.jpg" alt="Contenido Comercial"></a>
-                    <a href="#proyecto2" class="filmstrip-item"><img src="videos/proyecto2.jpg" alt="Edición en Tendencia"></a>
-                    <a href="#proyecto3" class="filmstrip-item"><img src="videos/proyecto3.jpg" alt="Contenido Educativo"></a>
-                    <a href="#proyecto4" class="filmstrip-item filmstrip-activo"><img src="videos/proyecto4.jpg" alt="Video Explicativo"></a>
-                    <a href="#proyecto5" class="filmstrip-item"><img src="videos/proyecto5.jpg" alt="Reel Informativo"></a>
+                    <a href="#proyecto1" class="filmstrip-item"><span class="filmstrip-numero">01</span><img src="videos/proyecto1.jpg" alt="Contenido Comercial" loading="lazy"></a>
+                    <a href="#proyecto2" class="filmstrip-item"><span class="filmstrip-numero">02</span><img src="videos/proyecto2.jpg" alt="Edición en Tendencia" loading="lazy"></a>
+                    <a href="#proyecto3" class="filmstrip-item"><span class="filmstrip-numero">03</span><img src="videos/proyecto3.jpg" alt="Contenido Educativo" loading="lazy"></a>
+                    <a href="#proyecto4" class="filmstrip-item filmstrip-activo" aria-current="true"><span class="filmstrip-numero">04</span><img src="videos/proyecto4.jpg" alt="Video Explicativo" loading="lazy"></a>
+                    <a href="#proyecto5" class="filmstrip-item"><span class="filmstrip-numero">05</span><img src="videos/proyecto5.jpg" alt="Reel Informativo" loading="lazy"></a>
                 </div>
-            </div>
+            </article>
 
-            <div class="galeria" id="proyecto5">
-                <a href="#portafolio" class="galeria-cerrar">Cerrar galería</a>
+            <article class="galeria" id="proyecto5">
                 <div class="galeria-contenido">
                     <div class="galeria-info">
                         <span class="galeria-contador">05 / 05</span>
@@ -217,13 +183,13 @@
                     </div>
                 </div>
                 <div class="galeria-filmstrip">
-                    <a href="#proyecto1" class="filmstrip-item"><img src="videos/proyecto1.jpg" alt="Contenido Comercial"></a>
-                    <a href="#proyecto2" class="filmstrip-item"><img src="videos/proyecto2.jpg" alt="Edición en Tendencia"></a>
-                    <a href="#proyecto3" class="filmstrip-item"><img src="videos/proyecto3.jpg" alt="Contenido Educativo"></a>
-                    <a href="#proyecto4" class="filmstrip-item"><img src="videos/proyecto4.jpg" alt="Video Explicativo"></a>
-                    <a href="#proyecto5" class="filmstrip-item filmstrip-activo"><img src="videos/proyecto5.jpg" alt="Reel Informativo"></a>
+                    <a href="#proyecto1" class="filmstrip-item"><span class="filmstrip-numero">01</span><img src="videos/proyecto1.jpg" alt="Contenido Comercial" loading="lazy"></a>
+                    <a href="#proyecto2" class="filmstrip-item"><span class="filmstrip-numero">02</span><img src="videos/proyecto2.jpg" alt="Edición en Tendencia" loading="lazy"></a>
+                    <a href="#proyecto3" class="filmstrip-item"><span class="filmstrip-numero">03</span><img src="videos/proyecto3.jpg" alt="Contenido Educativo" loading="lazy"></a>
+                    <a href="#proyecto4" class="filmstrip-item"><span class="filmstrip-numero">04</span><img src="videos/proyecto4.jpg" alt="Video Explicativo" loading="lazy"></a>
+                    <a href="#proyecto5" class="filmstrip-item filmstrip-activo" aria-current="true"><span class="filmstrip-numero">05</span><img src="videos/proyecto5.jpg" alt="Reel Informativo" loading="lazy"></a>
                 </div>
-            </div>
+            </article>
         </section>
 
         <!-- ==================== SOBRE MÍ ==================== -->
