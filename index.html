@@ -6,14 +6,14 @@
     <title>Portafolio | Edición de Video Vertical</title>
 
     <!-- ==================== SEO ==================== -->
-    <meta name="description" content="Editor audiovisual freelance especializado en Reels y TikToks. Ayudo a marcas y negocios locales a impulsar sus redes sociales con edición dinámica y profesional.">
+    <meta name="description" content="Editor audiovisual freelance especializado en contenido vertical. Edición de Reels y TikToks para marcas y negocios que buscan comunicar con claridad y retener audiencia.">
     <!-- Reemplaza este dominio por el real una vez que publiques el sitio -->
     <link rel="canonical" href="https://tu-dominio.com/">
 
     <!-- ==================== OPEN GRAPH (vista previa al compartir el link) ==================== -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Portafolio | Edición de Video Vertical">
-    <meta property="og:description" content="Editor audiovisual freelance especializado en Reels y TikToks. Ayudo a marcas y negocios locales a impulsar sus redes sociales.">
+    <meta property="og:description" content="Editor audiovisual freelance especializado en contenido vertical para marcas y negocios.">
     <meta property="og:image" content="https://tu-dominio.com/assets/og-image.png">
     <meta property="og:url" content="https://tu-dominio.com/">
     <meta property="og:locale" content="es_CL">
@@ -30,7 +30,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <link rel="manifest" href="assets/site.webmanifest">
-    <meta name="theme-color" content="#0f111a">
+    <meta name="theme-color" content="#ffffff">
 
     <!-- ==================== SEGURIDAD ==================== -->
     <!-- Restringe qué recursos puede cargar la página (mitiga XSS e inyección de contenido externo) -->
@@ -48,7 +48,7 @@
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "name": "Edición de Reels y TikToks",
-      "description": "Editor audiovisual freelance especializado en Reels y TikToks para marcas y negocios locales.",
+      "description": "Editor audiovisual freelance especializado en contenido vertical para marcas y negocios.",
       "url": "https://tu-dominio.com/",
       "image": "https://tu-dominio.com/assets/og-image.png",
       "email": "mailto:amaro3004@gmail.com",
@@ -69,80 +69,160 @@
     <header class="hero">
         <div class="container">
             <span class="etiqueta">Editor Audiovisual Freelance</span>
-            <h1 class="titulo-principal">Edición de Reels y TikToks</h1>
-            <p class="subtitulo">Ayudo a marcas y negocios locales a impulsar sus redes sociales.</p>
-            <a href="https://wa.me/56984640412?text=Hola%2C%20vi%20tu%20portafolio%20y%20quiero%20cotizar%20un%20video" target="_blank" rel="noopener noreferrer" class="boton-primario">Cotizar mi proyecto</a>
+            <h1 class="titulo-principal">Contenido vertical<br>que retiene</h1>
+            <p class="subtitulo">Edición de Reels, TikToks y formato corto para marcas y negocios que necesitan comunicar con claridad y sostener la atención de su audiencia.</p>
+            <a href="https://wa.me/56984640412?text=Hola%2C%20vi%20tu%20portafolio%20y%20quiero%20cotizar%20un%20video" target="_blank" rel="noopener noreferrer" class="boton-primario">Solicitar cotización</a>
         </div>
     </header>
 
     <!-- ==================== PORTAFOLIO DE VIDEOS ==================== -->
     <main class="container" id="main-content">
-        <section class="seccion-portafolio">
-            <h2 class="titulo-seccion">Mis Mejores Trabajos</h2>
-            
+        <section class="seccion-portafolio" id="portafolio">
+            <div class="portafolio-encabezado">
+                <span class="portafolio-indice">(05)</span>
+                <h2 class="titulo-editorial">Trabajos<br>seleccionados</h2>
+            </div>
+
+            <!-- Miniaturas: al hacer clic se abre la vista grande (galería) de ese proyecto -->
             <div class="cuadricula-videos">
-                
-                <!-- PROYECTO 1 -->
-                <article class="tarjeta-proyecto">
-                    <div class="celular-mockup">
-                        <div class="notch"></div>
-                        <!-- Reemplaza el src con el nombre de tu archivo de video -->
-                        <video src="videos/proyecto1.mp4" controls muted loop playsinline preload="none" poster="videos/proyecto1.jpg" aria-label="Video de ejemplo: contenido comercial editado"></video>
-                    </div>
-                    <div class="info-proyecto">
-                        <h3>Contenido Comercial</h3>
-                        <p>Ritmo dinámico, retención de audiencia y llamado a la acción claro.</p>
-                    </div>
-                </article>
+                <a href="#proyecto1" class="miniatura-proyecto">
+                    <span class="miniatura-numero">01</span>
+                    <img src="videos/proyecto1.jpg" alt="Contenido Comercial" loading="lazy">
+                    <span class="miniatura-titulo">Contenido Comercial</span>
+                </a>
+                <a href="#proyecto2" class="miniatura-proyecto">
+                    <span class="miniatura-numero">02</span>
+                    <img src="videos/proyecto2.jpg" alt="Edición en Tendencia" loading="lazy">
+                    <span class="miniatura-titulo">Edición en Tendencia</span>
+                </a>
+                <a href="#proyecto3" class="miniatura-proyecto">
+                    <span class="miniatura-numero">03</span>
+                    <img src="videos/proyecto3.jpg" alt="Contenido Educativo" loading="lazy">
+                    <span class="miniatura-titulo">Contenido Educativo</span>
+                </a>
+                <a href="#proyecto4" class="miniatura-proyecto">
+                    <span class="miniatura-numero">04</span>
+                    <img src="videos/proyecto4.jpg" alt="Video Explicativo" loading="lazy">
+                    <span class="miniatura-titulo">Video Explicativo</span>
+                </a>
+                <a href="#proyecto5" class="miniatura-proyecto">
+                    <span class="miniatura-numero">05</span>
+                    <img src="videos/proyecto5.jpg" alt="Reel Informativo" loading="lazy">
+                    <span class="miniatura-titulo">Reel Informativo</span>
+                </a>
+            </div>
 
-                <!-- PROYECTO 2 -->
-                <article class="tarjeta-proyecto">
-                    <div class="celular-mockup">
-                        <div class="notch"></div>
-                        <video src="videos/proyecto2.mp4" controls muted loop playsinline preload="none" poster="videos/proyecto2.jpg" aria-label="Video de ejemplo: edición en tendencia"></video>
-                    </div>
-                    <div class="info-proyecto">
-                        <h3>Edición en Tendencia</h3>
-                        <p>Sincronización musical, efectos de sonido y subtítulos animados.</p>
-                    </div>
-                </article>
+            <!-- ==================== GALERÍAS (vista grande, estilo editorial) ==================== -->
+            <!-- Funcionan sin JavaScript, usando anclas (#) y :target en el CSS -->
 
-                <!-- PROYECTO 3 -->
-                <article class="tarjeta-proyecto">
-                    <div class="celular-mockup">
+            <div class="galeria" id="proyecto1">
+                <a href="#portafolio" class="galeria-cerrar">Cerrar galería</a>
+                <div class="galeria-contenido">
+                    <div class="galeria-info">
+                        <span class="galeria-contador">01 / 05</span>
+                        <h3 class="titulo-editorial galeria-titulo">Contenido<br>Comercial</h3>
+                        <p class="galeria-descripcion">Pieza comercial con ritmo sostenido, jerarquía visual clara y un llamado a la acción definido.</p>
+                    </div>
+                    <div class="celular-mockup celular-mockup--grande">
                         <div class="notch"></div>
-                        <video src="videos/proyecto3.mp4" controls muted loop playsinline preload="none" poster="videos/proyecto3.jpg" aria-label="Video de ejemplo: contenido educativo"></video>
+                        <video src="videos/proyecto1.mp4" controls muted loop playsinline preload="none" poster="videos/proyecto1.jpg" aria-label="Video: Contenido Comercial"></video>
                     </div>
-                    <div class="info-proyecto">
-                        <h3>Contenido Educativo</h3>
-                        <p>Datos y curiosidades explicados con ritmo dinámico y branding propio.</p>
-                    </div>
-                </article>
+                </div>
+                <div class="galeria-filmstrip">
+                    <a href="#proyecto1" class="filmstrip-item filmstrip-activo"><img src="videos/proyecto1.jpg" alt="Contenido Comercial"></a>
+                    <a href="#proyecto2" class="filmstrip-item"><img src="videos/proyecto2.jpg" alt="Edición en Tendencia"></a>
+                    <a href="#proyecto3" class="filmstrip-item"><img src="videos/proyecto3.jpg" alt="Contenido Educativo"></a>
+                    <a href="#proyecto4" class="filmstrip-item"><img src="videos/proyecto4.jpg" alt="Video Explicativo"></a>
+                    <a href="#proyecto5" class="filmstrip-item"><img src="videos/proyecto5.jpg" alt="Reel Informativo"></a>
+                </div>
+            </div>
 
-                <!-- PROYECTO 4 -->
-                <article class="tarjeta-proyecto">
-                    <div class="celular-mockup">
+            <div class="galeria" id="proyecto2">
+                <a href="#portafolio" class="galeria-cerrar">Cerrar galería</a>
+                <div class="galeria-contenido">
+                    <div class="galeria-info">
+                        <span class="galeria-contador">02 / 05</span>
+                        <h3 class="titulo-editorial galeria-titulo">Edición en<br>Tendencia</h3>
+                        <p class="galeria-descripcion">Sincronización musical, diseño sonoro y subtitulado animado aplicados a formato de tendencia.</p>
+                    </div>
+                    <div class="celular-mockup celular-mockup--grande">
                         <div class="notch"></div>
-                        <video src="videos/proyecto4.mp4" controls muted loop playsinline preload="none" poster="videos/proyecto4.jpg" aria-label="Video de ejemplo: contenido explicativo"></video>
+                        <video src="videos/proyecto2.mp4" controls muted loop playsinline preload="none" poster="videos/proyecto2.jpg" aria-label="Video: Edición en Tendencia"></video>
                     </div>
-                    <div class="info-proyecto">
-                        <h3>Video Explicativo</h3>
-                        <p>Dos presentadores, edición a cámara y gancho fuerte desde el primer segundo.</p>
-                    </div>
-                </article>
+                </div>
+                <div class="galeria-filmstrip">
+                    <a href="#proyecto1" class="filmstrip-item"><img src="videos/proyecto1.jpg" alt="Contenido Comercial"></a>
+                    <a href="#proyecto2" class="filmstrip-item filmstrip-activo"><img src="videos/proyecto2.jpg" alt="Edición en Tendencia"></a>
+                    <a href="#proyecto3" class="filmstrip-item"><img src="videos/proyecto3.jpg" alt="Contenido Educativo"></a>
+                    <a href="#proyecto4" class="filmstrip-item"><img src="videos/proyecto4.jpg" alt="Video Explicativo"></a>
+                    <a href="#proyecto5" class="filmstrip-item"><img src="videos/proyecto5.jpg" alt="Reel Informativo"></a>
+                </div>
+            </div>
 
-                <!-- PROYECTO 5 -->
-                <article class="tarjeta-proyecto">
-                    <div class="celular-mockup">
+            <div class="galeria" id="proyecto3">
+                <a href="#portafolio" class="galeria-cerrar">Cerrar galería</a>
+                <div class="galeria-contenido">
+                    <div class="galeria-info">
+                        <span class="galeria-contador">03 / 05</span>
+                        <h3 class="titulo-editorial galeria-titulo">Contenido<br>Educativo</h3>
+                        <p class="galeria-descripcion">Formato divulgativo: información densa presentada de forma clara, con identidad visual consistente.</p>
+                    </div>
+                    <div class="celular-mockup celular-mockup--grande">
                         <div class="notch"></div>
-                        <video src="videos/proyecto5.mp4" controls muted loop playsinline preload="none" poster="videos/proyecto5.jpg" aria-label="Video de ejemplo: reel informativo"></video>
+                        <video src="videos/proyecto3.mp4" controls muted loop playsinline preload="none" poster="videos/proyecto3.jpg" aria-label="Video: Contenido Educativo"></video>
                     </div>
-                    <div class="info-proyecto">
-                        <h3>Reel Informativo</h3>
-                        <p>Temas complejos explicados de forma simple, clara y visual.</p>
-                    </div>
-                </article>
+                </div>
+                <div class="galeria-filmstrip">
+                    <a href="#proyecto1" class="filmstrip-item"><img src="videos/proyecto1.jpg" alt="Contenido Comercial"></a>
+                    <a href="#proyecto2" class="filmstrip-item"><img src="videos/proyecto2.jpg" alt="Edición en Tendencia"></a>
+                    <a href="#proyecto3" class="filmstrip-item filmstrip-activo"><img src="videos/proyecto3.jpg" alt="Contenido Educativo"></a>
+                    <a href="#proyecto4" class="filmstrip-item"><img src="videos/proyecto4.jpg" alt="Video Explicativo"></a>
+                    <a href="#proyecto5" class="filmstrip-item"><img src="videos/proyecto5.jpg" alt="Reel Informativo"></a>
+                </div>
+            </div>
 
+            <div class="galeria" id="proyecto4">
+                <a href="#portafolio" class="galeria-cerrar">Cerrar galería</a>
+                <div class="galeria-contenido">
+                    <div class="galeria-info">
+                        <span class="galeria-contador">04 / 05</span>
+                        <h3 class="titulo-editorial galeria-titulo">Video<br>Explicativo</h3>
+                        <p class="galeria-descripcion">Formato a dos cámaras con edición dinámica y un gancho construido en los primeros segundos.</p>
+                    </div>
+                    <div class="celular-mockup celular-mockup--grande">
+                        <div class="notch"></div>
+                        <video src="videos/proyecto4.mp4" controls muted loop playsinline preload="none" poster="videos/proyecto4.jpg" aria-label="Video: Video Explicativo"></video>
+                    </div>
+                </div>
+                <div class="galeria-filmstrip">
+                    <a href="#proyecto1" class="filmstrip-item"><img src="videos/proyecto1.jpg" alt="Contenido Comercial"></a>
+                    <a href="#proyecto2" class="filmstrip-item"><img src="videos/proyecto2.jpg" alt="Edición en Tendencia"></a>
+                    <a href="#proyecto3" class="filmstrip-item"><img src="videos/proyecto3.jpg" alt="Contenido Educativo"></a>
+                    <a href="#proyecto4" class="filmstrip-item filmstrip-activo"><img src="videos/proyecto4.jpg" alt="Video Explicativo"></a>
+                    <a href="#proyecto5" class="filmstrip-item"><img src="videos/proyecto5.jpg" alt="Reel Informativo"></a>
+                </div>
+            </div>
+
+            <div class="galeria" id="proyecto5">
+                <a href="#portafolio" class="galeria-cerrar">Cerrar galería</a>
+                <div class="galeria-contenido">
+                    <div class="galeria-info">
+                        <span class="galeria-contador">05 / 05</span>
+                        <h3 class="titulo-editorial galeria-titulo">Reel<br>Informativo</h3>
+                        <p class="galeria-descripcion">Traducción de un tema complejo a un relato visual breve, comprensible y directo.</p>
+                    </div>
+                    <div class="celular-mockup celular-mockup--grande">
+                        <div class="notch"></div>
+                        <video src="videos/proyecto5.mp4" controls muted loop playsinline preload="none" poster="videos/proyecto5.jpg" aria-label="Video: Reel Informativo"></video>
+                    </div>
+                </div>
+                <div class="galeria-filmstrip">
+                    <a href="#proyecto1" class="filmstrip-item"><img src="videos/proyecto1.jpg" alt="Contenido Comercial"></a>
+                    <a href="#proyecto2" class="filmstrip-item"><img src="videos/proyecto2.jpg" alt="Edición en Tendencia"></a>
+                    <a href="#proyecto3" class="filmstrip-item"><img src="videos/proyecto3.jpg" alt="Contenido Educativo"></a>
+                    <a href="#proyecto4" class="filmstrip-item"><img src="videos/proyecto4.jpg" alt="Video Explicativo"></a>
+                    <a href="#proyecto5" class="filmstrip-item filmstrip-activo"><img src="videos/proyecto5.jpg" alt="Reel Informativo"></a>
+                </div>
             </div>
         </section>
 
@@ -152,28 +232,28 @@
             <img src="assets/avatar-placeholder.png" alt="Foto de perfil" class="foto-perfil">
             <div class="sobre-mi-texto">
                 <h2 class="titulo-seccion">Sobre mí</h2>
-                <p>Soy editor audiovisual freelance, especializado en contenido vertical para Instagram y TikTok. Trabajo con marcas y negocios locales que quieren destacar en redes sociales con videos dinámicos, bien ritmados y pensados para retener a la audiencia.</p>
+                <p>Editor audiovisual freelance enfocado en contenido vertical para Instagram y TikTok. Trabajo con marcas y negocios que buscan una presencia sólida en redes: piezas con ritmo, criterio narrativo y una identidad visual coherente en cada publicación.</p>
             </div>
         </section>
 
         <!-- ==================== PROCESO DE TRABAJO ==================== -->
         <section class="seccion-proceso">
-            <h2 class="titulo-seccion">¿Cómo trabajamos?</h2>
+            <h2 class="titulo-seccion">Metodología de trabajo</h2>
             <div class="pasos-proceso">
                 <div class="paso">
                     <span class="paso-numero">1</span>
-                    <h3>Me cuentas tu idea</h3>
-                    <p>Me compartes tu material y el objetivo del video (venta, marca personal, tendencia, etc.).</p>
+                    <h3>Briefing</h3>
+                    <p>Definimos el objetivo de la pieza, el público y el mensaje. Revisamos el material disponible y acordamos plazos.</p>
                 </div>
                 <div class="paso">
                     <span class="paso-numero">2</span>
-                    <h3>Edito</h3>
-                    <p>Ritmo, música, subtítulos y efectos pensados para que la gente no haga scroll.</p>
+                    <h3>Edición</h3>
+                    <p>Montaje, diseño sonoro, subtitulado y gráficos, con foco en la retención durante los primeros segundos.</p>
                 </div>
                 <div class="paso">
                     <span class="paso-numero">3</span>
-                    <h3>Te lo entrego</h3>
-                    <p>Revisas, pedimos ajustes si hace falta, y listo para publicar.</p>
+                    <h3>Entrega</h3>
+                    <p>Entrego una primera versión, incorporo tus ajustes y envío el archivo final optimizado para cada plataforma.</p>
                 </div>
             </div>
         </section>
@@ -182,7 +262,7 @@
         <!-- Funciona automáticamente si publicas el sitio en Netlify (Netlify Forms, sin backend). -->
         <!-- Si usas otro hosting, cambia el <form> para apuntar a un servicio como https://formspree.io -->
         <section class="seccion-contacto" id="contacto">
-            <h2 class="titulo-seccion">Escríbeme</h2>
+            <h2 class="titulo-seccion">Conversemos</h2>
             <form name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="formulario-contacto">
                 <input type="hidden" name="form-name" value="contacto">
                 <p class="campo-oculto" aria-hidden="true">
@@ -200,11 +280,11 @@
                 </div>
 
                 <div class="campo-formulario">
-                    <label for="mensaje">Mensaje</label>
+                    <label for="mensaje">Cuéntame sobre tu proyecto</label>
                     <textarea id="mensaje" name="mensaje" rows="5" required maxlength="1000"></textarea>
                 </div>
 
-                <button type="submit" class="boton-primario">Enviar mensaje</button>
+                <button type="submit" class="boton-primario">Enviar consulta</button>
             </form>
         </section>
     </main>
@@ -212,7 +292,7 @@
     <!-- ==================== PIE DE PÁGINA / CONTACTO ==================== -->
     <footer class="footer">
         <div class="container">
-            <h2>¿Listo para hablarme?</h2>
+            <h2>¿Trabajamos juntos?</h2>
             <div class="enlaces-contacto">
                 <a href="mailto:amaro3004@gmail.com" class="enlace">amaro3004@gmail.com</a>
                 <a href="https://instagram.com/amaroantoine" target="_blank" rel="noopener noreferrer" class="enlace">Instagram</a>

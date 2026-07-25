@@ -1,12 +1,12 @@
-/* ==================== VARIABLES DE COLOR ==================== */
+/* ==================== VARIABLES DE COLOR (editorial: blanco / negro / rojo) ==================== */
 :root {
-    --fondo-oscuro: #0f111a;
-    --fondo-tarjeta: #1a1d2d;
-    --texto-principal: #f8fafc;
-    --texto-secundario: #94a3b8;
-    --acento: #6366f1;
-    --boton-hover: #4f46e5;
-    --borde: #2e334a;
+    --fondo-oscuro: #ffffff;
+    --fondo-tarjeta: #f4f4f4;
+    --texto-principal: #0a0a0a;
+    --texto-secundario: #6b6b6b;
+    --acento: #e1121c;
+    --boton-hover: #b60d15;
+    --borde: #e2e2e2;
 }
 
 /* ==================== REINICIO GENERAL ==================== */
@@ -92,7 +92,7 @@ textarea:focus-visible {
 
 .etiqueta {
     display: inline-block;
-    background-color: rgba(99, 102, 241, 0.1);
+    background-color: rgba(225, 18, 28, 0.08);
     color: var(--acento);
     padding: 8px 16px;
     border-radius: 20px;
@@ -105,9 +105,12 @@ textarea:focus-visible {
 }
 
 .titulo-principal {
-    font-size: 2.8rem;
-    margin-bottom: 20px;
-    line-height: 1.2;
+    font-size: clamp(2.4rem, 7vw, 4rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 0.95;
+    margin-bottom: 24px;
     animation: fadeInUp 0.6s ease both 0.1s;
 }
 
@@ -128,9 +131,12 @@ textarea:focus-visible {
     background-color: var(--acento);
     color: white;
     text-decoration: none;
-    padding: 14px 32px;
-    border-radius: 30px;
-    font-weight: bold;
+    padding: 15px 34px;
+    border-radius: 2px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.85rem;
     transition: background-color 0.3s ease;
 }
 
@@ -138,7 +144,7 @@ textarea:focus-visible {
     background-color: var(--boton-hover);
 }
 
-/* ==================== PORTAFOLIO ==================== */
+/* ==================== PORTAFOLIO (estilo editorial) ==================== */
 .seccion-portafolio {
     padding: 40px 0 80px;
 }
@@ -149,45 +155,226 @@ textarea:focus-visible {
     margin-bottom: 50px;
 }
 
+/* Tipografía bold/condensada tipo revista, reutilizable en toda la sección */
+.titulo-editorial {
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 0.95;
+    font-size: clamp(2.2rem, 6vw, 3.6rem);
+}
+
+.portafolio-encabezado {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.portafolio-indice {
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: var(--acento);
+    letter-spacing: -0.01em;
+}
+
+/* ==================== MINIATURAS ==================== */
 .cuadricula-videos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+}
+
+.miniatura-proyecto {
+    position: relative;
+    display: block;
+    aspect-ratio: 9 / 16;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--fondo-tarjeta);
+    border: 1px solid var(--borde);
+    text-decoration: none;
+    animation: fadeInUp 0.6s ease both;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.cuadricula-videos a:nth-child(2) { animation-delay: 0.1s; }
+.cuadricula-videos a:nth-child(3) { animation-delay: 0.2s; }
+.cuadricula-videos a:nth-child(4) { animation-delay: 0.3s; }
+.cuadricula-videos a:nth-child(5) { animation-delay: 0.4s; }
+
+.miniatura-proyecto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+.miniatura-proyecto:hover {
+    border-color: var(--acento);
+    transform: translateY(-4px);
+}
+
+.miniatura-proyecto:hover img {
+    transform: scale(1.06);
+}
+
+.miniatura-numero {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    font-weight: 900;
+    font-size: 0.8rem;
+    color: #ffffff;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    z-index: 2;
+}
+
+.miniatura-titulo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 24px 12px 12px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+/* ==================== GALERÍA (vista grande, sin JavaScript) ==================== */
+/* Se muestra usando :target — el enlace de cada miniatura apunta a #proyectoN */
+.galeria {
+    position: fixed;
+    inset: 0;
+    z-index: 300;
+    background-color: rgba(255, 255, 255, 0.99);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 32px clamp(20px, 6vw, 80px);
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+}
+
+.galeria:target {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.galeria-cerrar {
+    align-self: flex-start;
+    color: var(--texto-secundario);
+    text-decoration: underline;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.galeria-cerrar:hover {
+    color: var(--texto-principal);
+}
+
+.galeria-contenido {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(30px, 6vw, 90px);
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.galeria-info {
+    max-width: 360px;
+}
+
+.galeria-contador {
+    display: block;
+    color: var(--texto-secundario);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 16px;
+}
+
+.galeria-titulo {
+    margin-bottom: 20px;
+}
+
+.galeria-descripcion {
+    color: var(--texto-secundario);
+}
+
+.celular-mockup--grande {
+    width: 300px;
+    height: 580px;
+    flex-shrink: 0;
+}
+
+.galeria-filmstrip {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-shrink: 0;
+    overflow-x: auto;
+    padding-bottom: 8px;
+}
+
+.filmstrip-item {
+    flex-shrink: 0;
+    width: 56px;
+    height: 100px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    opacity: 0.5;
+    transition: opacity 0.25s ease, border-color 0.25s ease;
+}
+
+.filmstrip-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.filmstrip-item:hover {
+    opacity: 0.85;
+}
+
+.filmstrip-activo {
+    opacity: 1;
+    border-color: var(--acento);
+}
+
+/* Evita el scroll de fondo mientras la galería está abierta (navegadores compatibles con :has) */
+html:has(.galeria:target) {
+    overflow: hidden;
+}
+
+@media (max-width: 800px) {
+    .galeria-contenido {
+        flex-direction: column-reverse;
+        gap: 24px;
+    }
+    .galeria-info {
+        max-width: 100%;
+        text-align: center;
+    }
+    .celular-mockup--grande {
+        width: 220px;
+        height: 420px;
+    }
 }
 
 /* ==================== TARJETAS Y CELULARES ==================== */
-.tarjeta-proyecto {
-    background-color: var(--fondo-tarjeta);
-    border: 1px solid var(--borde);
-    border-radius: 24px;
-    padding: 24px;
-    text-align: center;
-    animation: fadeInUp 0.6s ease both;
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.tarjeta-proyecto:nth-child(2) {
-    animation-delay: 0.1s;
-}
-
-.tarjeta-proyecto:nth-child(3) {
-    animation-delay: 0.2s;
-}
-
-.tarjeta-proyecto:nth-child(4) {
-    animation-delay: 0.3s;
-}
-
-.tarjeta-proyecto:nth-child(5) {
-    animation-delay: 0.4s;
-}
-
-.tarjeta-proyecto:hover {
-    transform: translateY(-6px);
-    border-color: var(--acento);
-    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
-}
-
 .celular-mockup {
     position: relative;
     width: 240px;
@@ -197,7 +384,7 @@ textarea:focus-visible {
     border-radius: 30px;
     border: 8px solid #222;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
 }
 
 .notch {
@@ -220,16 +407,6 @@ textarea:focus-visible {
     height: 100%;
     border: none;
     object-fit: cover;
-}
-
-.info-proyecto h3 {
-    font-size: 1.2rem;
-    margin-bottom: 8px;
-}
-
-.info-proyecto p {
-    font-size: 0.9rem;
-    color: var(--texto-secundario);
 }
 
 /* ==================== PIE DE PÁGINA ==================== */
@@ -413,7 +590,7 @@ textarea:focus-visible {
 .campo-formulario textarea:focus {
     outline: none;
     border-color: var(--acento);
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+    box-shadow: 0 0 0 3px rgba(225, 18, 28, 0.18);
 }
 
 .formulario-contacto .boton-primario {
@@ -436,14 +613,14 @@ textarea:focus-visible {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
     z-index: 100;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .whatsapp-flotante:hover {
     transform: scale(1.08);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 /* ==================== ADAPTABILIDAD (MÓVILES) ==================== */
