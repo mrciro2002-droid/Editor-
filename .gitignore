@@ -4,3 +4,9 @@ videos/test5s*.mp4
 videos/Frutas de Chile def.mp4
 videos/definitiuvo cae prof.mp4
 videos/secreto bancario.mp4
+
+# Archivos generados por editores/IDE
+.Rhistory
+.Rproj.user/
+.DS_Store
+Thumbs.db

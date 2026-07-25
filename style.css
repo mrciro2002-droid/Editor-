@@ -210,6 +210,29 @@ textarea:focus-visible {
     transition: transform 0.4s ease, opacity 0.3s ease;
 }
 
+/* Ícono de reproducción sobre la miniatura */
+.miniatura-proyecto::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 46px;
+    height: 46px;
+    z-index: 2;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 46 46'%3E%3Ccircle cx='23' cy='23' r='23' fill='%23ffffff' fill-opacity='0.92'/%3E%3Cpath d='M19 15l13 8-13 8z' fill='%230a0a0a'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    pointer-events: none;
+}
+
+.miniatura-proyecto:hover::after {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.12);
+}
+
 .miniatura-proyecto:hover {
     border-color: var(--acento);
     transform: translateY(-4px);
