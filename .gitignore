@@ -11,3 +11,25 @@ videos/test5s*.mp4
 .Rproj.user/
 .DS_Store
 Thumbs.db
+
+# ==================== SECRETOS ====================
+# Nunca subas claves ni credenciales al repositorio: este repo es PÚBLICO.
+# Si algún día agregas un servicio que necesite una clave, guárdala en un
+# archivo .env local (o en las variables de entorno de tu hosting), nunca
+# escrita dentro de index.html o script.js.
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+id_rsa
+id_rsa.*
+credentials.json
+secrets.json
+config.local.js
+*.credentials
+.netrc
+.npmrc
+.aws/
+.ssh/
