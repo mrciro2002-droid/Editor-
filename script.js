@@ -16,6 +16,11 @@
         return;
     }
 
+    // Avisa al CSS de que JavaScript está activo: a partir de aquí el proyecto
+    // visible lo decide la clase .galeria--activa y no el :target de la URL.
+    // (history.replaceState no actualiza :target, y eso impedía cambiar de video.)
+    seccion.classList.add('js-portafolio');
+
     function idDesdeHash() {
         return (window.location.hash || '').replace('#', '');
     }

@@ -19,12 +19,34 @@
 
 html {
     scroll-behavior: smooth;
+    /* Evita el "rebote" que arrastra el scroll de la página al llegar a los bordes */
+    overscroll-behavior-y: none;
+    /* Deja aire bajo la barra al saltar a una sección con ancla */
+    scroll-padding-top: 24px;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
     background-color: var(--fondo-oscuro);
     color: var(--texto-principal);
     line-height: 1.6;
+    /* Reduce el trabajo de pintado durante el scroll */
+    text-rendering: optimizeSpeed;
+}
+
+/* El navegador se salta el renderizado de las secciones que aún no están
+   en pantalla, lo que hace el scroll bastante más fluido en móviles */
+.seccion-proceso,
+.seccion-contacto,
+.footer {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 500px;
+}
+
+/* Reserva el espacio de las imágenes antes de que carguen: evita saltos */
+img,
+video {
+    max-width: 100%;
 }
 
 /* ==================== ACCESIBILIDAD ==================== */
@@ -81,6 +103,16 @@ textarea:focus-visible {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Transición corta y sólo con opacidad: no desplaza contenido al cambiar de video */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
 
@@ -190,20 +222,26 @@ textarea:focus-visible {
 
 /* ==================== REPRODUCTOR DE PROYECTOS ==================== */
 /* Cada proyecto es un bloque .galeria; sólo se ve el activo.
-   El activo lo marca script.js con .galeria--activa; :target es el
-   respaldo para navegadores sin JavaScript. */
+   Con JavaScript manda la clase .galeria--activa (script.js añade
+   .js-portafolio a la sección). Sin JavaScript, el respaldo es :target. */
 .galeria {
     display: none;
 }
 
-.galeria--activa,
-.galeria:target {
+/* --- Con JavaScript --- */
+.js-portafolio .galeria--activa {
     display: block;
-    animation: fadeInUp 0.45s ease both;
+    animation: aparecer 0.35s ease both;
 }
 
-/* Sin JavaScript: al seleccionar otro proyecto, oculta el que venía por defecto */
-.seccion-portafolio:has(.galeria:target) .galeria--activa:not(:target) {
+/* --- Sin JavaScript (respaldo con anclas) --- */
+.seccion-portafolio:not(.js-portafolio) .galeria--activa,
+.seccion-portafolio:not(.js-portafolio) .galeria:target {
+    display: block;
+    animation: aparecer 0.35s ease both;
+}
+
+.seccion-portafolio:not(.js-portafolio):has(.galeria:target) .galeria--activa:not(:target) {
     display: none;
 }
 
@@ -250,6 +288,11 @@ textarea:focus-visible {
     gap: 14px;
     overflow-x: auto;
     padding-bottom: 8px;
+    /* Desplazamiento horizontal con inercia y ajuste suave en móviles */
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
 }
 
 .filmstrip-item {
@@ -261,6 +304,10 @@ textarea:focus-visible {
     overflow: hidden;
     border: 2px solid transparent;
     opacity: 0.45;
+    scroll-snap-align: center;
+    /* Área táctil cómoda en el celular */
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
     transition: opacity 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
 }
 
